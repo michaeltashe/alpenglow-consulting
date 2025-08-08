@@ -15,11 +15,12 @@ import {
 } from "@radix-ui/themes";
 import PersonCard from "./personCard";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
     <div className="bg-linear-to-bl from green-950 to-emerald-950 font-sans grid items-center justify-items-center min-h-screen p-8 pb-20 gap-16">
-      <main className="w-full max-w-[1100px] h-full flex justify-center align-center">
+      <motion.main initial={{transform: "translateY(-150px)", opacity: 0}}animate={{transform: "translateY(0px)", opacity: 1}} transition={{duration: 0.5, ease: "easeInOut"}} className="w-full max-w-[1100px] h-full flex justify-center align-center">
         <Grid height="100%" mt="8" columns={{ xs: "1", md: "1fr 1fr" }}>
           <Flex align="center">
             <Flex className="w-auto" direction="column" gap="2" align="start">
@@ -30,7 +31,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/michaeltashe"
                 target="_blank"
               >
-                <Button mt="4">Learn more</Button>
+                <Button style={{cursor: "pointer"}} mt="4">Learn more</Button>
               </Link>
             </Flex>
           </Flex>
@@ -67,21 +68,21 @@ export default function Home() {
                 <Heading size="5" mb="2">Request for Services</Heading>
                 <Text size="2" color="gray">Please fill out this request form and we will reach out to you shortly with a quote.</Text>
                 </Box>
-                <Text size="2" mt="2">Name</Text>
+                <Text size="1" color="gray" mt="2"><Em>Name</Em></Text>
                 <TextField.Root mb="2"></TextField.Root>
-                <Text size="2" mt="2">Email</Text>
+                <Text size="1" color="gray" mt="2"><Em>Email</Em></Text>
                 <TextField.Root mb="2"></TextField.Root>
-                <Text size="2" mt="2">Message</Text>
+                <Text size="1" color="gray" mt="2"><Em>Message</Em></Text>
                 <TextArea mb="2"></TextArea>
                 <Flex justify="end" gap="2" mt="2">
-                <Button variant="soft">Submit</Button>
+                <Button style={{cursor: "pointer"}} variant="soft">Submit</Button>
                 {/* <Button>Submit</Button> */}
                 </Flex>
               </Card>
             </Box>
         </Grid>
 
-      </main>
+      </motion.main>
     </div>
   );
 }
