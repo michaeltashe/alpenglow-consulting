@@ -41,7 +41,7 @@ export default function Home() {
             </Flex>
           </Flex>
 
-          <Flex direction="column" className="w-auto" justify="end">
+          <Flex direction="column" className="w-auto" justify="center">
             <Heading mt="6" mb="2" size="4">
               Meet the Team
             </Heading>
