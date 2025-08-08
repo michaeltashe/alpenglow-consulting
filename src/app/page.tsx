@@ -38,7 +38,7 @@ export default function Home() {
               <PersonCard
                 avatarFallback={"JM"}
                 name={"Jordan Miller"}
-                role={"ML Software Engineer at Crimson Phoenix"}
+                role={"ML Engineer at Crimson Phoenix"}
               />
               <PersonCard
                 avatarFallback={"MA"}
