@@ -3,24 +3,24 @@ import React from "react";
 
 interface PersonCardProps {
   avatarFallback: string;
+  avatarUrl: string;
   name: string;
   role: string;
 }
 
 const PersonCard = (props: PersonCardProps) => {
-  const { avatarFallback, name, role } = props;
 
   return (
     <Box style={{ width: "100%" }}>
       <Card>
         <Flex gap="3" align="center">
-          <Avatar radius="full" size="3" fallback={avatarFallback} />
+          <Avatar radius="full" size="3" src={props.avatarUrl} fallback={props.avatarFallback} />
           <Box>
             <Text as="div" weight="bold" size="2">
-              {name}
+              {props.name}
             </Text>
             <Text as="div" color="gray" size="2">
-              {role}
+              {props.role}
             </Text>
           </Box>
         </Flex>

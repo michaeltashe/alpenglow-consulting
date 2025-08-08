@@ -10,6 +10,7 @@ import {
   Heading,
   Strong,
   Text,
+  TextArea,
   TextField,
 } from "@radix-ui/themes";
 import PersonCard from "./personCard";
@@ -17,12 +18,13 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="bg-linear-to-bl from green-950 to-emerald-950 font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div className="bg-linear-to-bl from green-950 to-emerald-950 font-sans grid items-center justify-items-center min-h-screen p-8 pb-20 gap-16">
       <main className="w-full max-w-[1100px] h-full flex justify-center align-center">
-        <Grid mt="8" columns={{ xs: "1", md: "1fr 1fr" }}>
+        <Grid height="100%" mt="8" columns={{ xs: "1", md: "1fr 1fr" }}>
           <Flex align="center">
             <Flex className="w-auto" direction="column" gap="2" align="start">
               <Heading size="8">2Freakz</Heading>
+              <Heading size="6" color="grass">Consultancy Services</Heading>
               <Text color="gray">The best thing since sliced bread.</Text>
               <Link
                 href="https://www.linkedin.com/in/michaeltashe"
@@ -40,13 +42,15 @@ export default function Home() {
             <Flex gap="3" direction="column" align="start">
               <PersonCard
                 avatarFallback={"JM"}
+                avatarUrl={"JordanMiller.jpg"}
                 name={"Jordan Miller"}
                 role={"ML Engineer at Crimson Phoenix"}
               />
               <PersonCard
                 avatarFallback={"MA"}
+                avatarUrl={"MichaelAshe.jpg"}
                 name={"Michael Ashe"}
-                role={"Associate Software Engineer at Lowe's"}
+                role={"Software Engineer at Lowe's"}
               />
             </Flex>
             <Text mt="4">
@@ -59,14 +63,19 @@ export default function Home() {
           </Flex>
                   <Box m="auto" mt="6" width="100%" gridColumn={"1 / -1"}>
               <Card>
-                <Heading mb="2">Make a difference today.</Heading>
-                <Text size="2" mt="2">Username</Text>
+                <Box mb="4">
+                <Heading size="5" mb="2">Request for Services</Heading>
+                <Text size="2" color="gray">Please fill out this request form and we will reach out to you shortly with a quote.</Text>
+                </Box>
+                <Text size="2" mt="2">Name</Text>
                 <TextField.Root mb="2"></TextField.Root>
-                <Text size="2" mt="2">Password</Text>
-                <TextField.Root type="password"></TextField.Root>
+                <Text size="2" mt="2">Email</Text>
+                <TextField.Root mb="2"></TextField.Root>
+                <Text size="2" mt="2">Message</Text>
+                <TextArea mb="2"></TextArea>
                 <Flex justify="end" gap="2" mt="2">
-                <Button variant="soft">Create an account</Button>
-                <Button>Sign in</Button>
+                <Button variant="soft">Submit</Button>
+                {/* <Button>Submit</Button> */}
                 </Flex>
               </Card>
             </Box>
