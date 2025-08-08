@@ -23,14 +23,14 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="bg-linear-to-bl from green-950 to-emerald-950 font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div className="bg-linear-to-bl from pink-950 to-violet-950 font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <Navbar />
       <motion.main initial={{transform: "translateY(-150px)", opacity: 0}}animate={{transform: "translateY(0px)", opacity: 1}} className="w-full max-w-[1100px] h-full flex justify-center align-center">
         <Grid height="100%" mt="8" columns={{ xs: "1", md: "1fr 1fr" }}>
           <Flex align="center">
             <Flex className="w-auto" direction="column" gap="2" align="start">
-              <Heading size="8">2Freakz</Heading>
-              <Heading size="6" color="grass">Consultancy Services</Heading>
+              <Heading size="8">Alpenglow</Heading>
+              <Heading size="6" color="plum">Consultancy Services</Heading>
               <Text color="gray">The best thing since sliced bread.</Text>
               <Link
                 href="https://www.linkedin.com/in/michaeltashe"

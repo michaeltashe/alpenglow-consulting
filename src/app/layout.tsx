@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <Theme appearance="dark" accentColor="green">
+        <Theme appearance="dark" accentColor="plum">
           {children}
           <ThemePanel defaultOpen={false} />
         </Theme>
