@@ -60,7 +60,7 @@ export default function Home() {
               />
             </Flex>
             <Text mt="4">
-              <Strong>2Freakz</Strong> is a creative software development duo
+              <Strong>Alpenglow</Strong> is a creative software development duo
               building unique, high-impact <Em>digital experiences.</Em> From
               web apps to experimental tools, they combine sharp code with bold
               ideas to craft projects that push boundaries and spark curiosity.

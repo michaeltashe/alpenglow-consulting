@@ -3,7 +3,7 @@ import "./globals.css";
 import { Theme, ThemePanel } from "@radix-ui/themes";
 
 export const metadata: Metadata = {
-  title: "2Freakz Studios",
+  title: "Alpenglow",
   description: "The best duo on Earth",
   manifest: '/manifest.json',
   icons: [
