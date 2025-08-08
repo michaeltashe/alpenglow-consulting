@@ -5,6 +5,11 @@ import { Theme, ThemePanel } from "@radix-ui/themes";
 export const metadata: Metadata = {
   title: "2Freakz Studios",
   description: "The best duo on Earth",
+  manifest: '/manifest.json',
+  icons: [
+    { rel: "apple-touch-icon", url: "/icons/ChatGPT Image Jul 13, 2025, 11_04_30 PM-128.png" },
+    { rel: "icon", url: "/icons/ChatGPT Image Jul 13, 2025, 11_04_30 PM-128.png" },
+  ],
 };
 
 export default function RootLayout({
