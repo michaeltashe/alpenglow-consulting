@@ -1,13 +1,16 @@
 "use client";
 
 import {
+  Box,
   Button,
+  Card,
   Em,
   Flex,
   Grid,
   Heading,
   Strong,
   Text,
+  TextField,
 } from "@radix-ui/themes";
 import PersonCard from "./personCard";
 import Link from "next/link";
@@ -52,6 +55,17 @@ export default function Home() {
               web apps to experimental tools, they combine sharp code with bold
               ideas to craft projects that push boundaries and spark curiosity.
             </Text>
+            <Box>
+              <Card>
+                <Heading>Make a difference today.</Heading>
+                <TextField.Root placeholder="Username"></TextField.Root>
+                <TextField.Root type="password" placeholder="Password"></TextField.Root>
+                <Flex justify="end" gap="2" mt="2">
+                <Button variant="soft">Create an account</Button>
+                <Button>Sign in</Button>
+                </Flex>
+              </Card>
+            </Box>
           </Flex>
         </Grid>
       </main>
