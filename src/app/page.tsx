@@ -17,7 +17,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="8font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div className="bg-linear-to-bl from green-950 to-emerald-950 font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="w-full max-w-[1100px] h-full flex justify-center align-center">
         <Grid mt="8" columns={{ xs: "1", md: "1fr 1fr" }}>
           <Flex align="center">
@@ -55,7 +55,9 @@ export default function Home() {
               web apps to experimental tools, they combine sharp code with bold
               ideas to craft projects that push boundaries and spark curiosity.
             </Text>
-            <Box mt="4">
+            
+          </Flex>
+                  <Box m="auto" mt="6" width="100%" gridColumn={"1 / -1"}>
               <Card>
                 <Heading mb="2">Make a difference today.</Heading>
                 <Text size="2" mt="2">Username</Text>
@@ -68,8 +70,8 @@ export default function Home() {
                 </Flex>
               </Card>
             </Box>
-          </Flex>
         </Grid>
+
       </main>
     </div>
   );
