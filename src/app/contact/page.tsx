@@ -26,7 +26,7 @@ export default function Home() {
     <div className="bg-linear-to-bl from pink-950 to-violet-950 font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <Navbar />
       <motion.main initial={{transform: "translateY(-150px)", opacity: 0}}animate={{transform: "translateY(0px)", opacity: 1}} className="w-full max-w-[1100px] h-full flex justify-center align-center">
-        <Grid height="100%" mt="8" columns={{ xs: "1", md: "1fr 1fr" }}>
+        <Grid height="100%" mt="8" gap="6" columns={{ xs: "1", md: "1fr 1fr" }}>
           <Flex align="center">
             <Flex className="w-auto" direction="column" gap="2" align="start">
               <Heading size="8">Contact Us</Heading>
@@ -34,11 +34,10 @@ export default function Home() {
             </Flex>
           </Flex>
 
-                  <Box m="auto" mt="6" width="100%" gridColumn={"1 / -1"}>
-              <Card>
+                  <Flex m="auto" width="100%" justify="center" align="center" height="100%">
+              <Card style={{width: "100%"}}>
                 <Box mb="4">
                 <Heading size="5" mb="2">Request for Services</Heading>
-                <Text size="2" color="gray">Please fill out this request form and we will reach out to you shortly with a quote.</Text>
                 </Box>
                 <Text size="1" color="gray" mt="2"><Em>Name</Em></Text>
                 <TextField.Root mb="2"></TextField.Root>
@@ -51,7 +50,7 @@ export default function Home() {
                 {/* <Button>Submit</Button> */}
                 </Flex>
               </Card>
-            </Box>
+            </Flex>
         </Grid>
 
       </motion.main>
