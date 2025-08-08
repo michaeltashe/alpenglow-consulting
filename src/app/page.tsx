@@ -55,11 +55,13 @@ export default function Home() {
               web apps to experimental tools, they combine sharp code with bold
               ideas to craft projects that push boundaries and spark curiosity.
             </Text>
-            <Box>
+            <Box mt="4">
               <Card>
-                <Heading>Make a difference today.</Heading>
-                <TextField.Root placeholder="Username"></TextField.Root>
-                <TextField.Root type="password" placeholder="Password"></TextField.Root>
+                <Heading mb="2">Make a difference today.</Heading>
+                <Text size="2" mt="2">Username</Text>
+                <TextField.Root mb="2"></TextField.Root>
+                <Text size="2" mt="2">Password</Text>
+                <TextField.Root type="password"></TextField.Root>
                 <Flex justify="end" gap="2" mt="2">
                 <Button variant="soft">Create an account</Button>
                 <Button>Sign in</Button>
