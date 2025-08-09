@@ -8,8 +8,8 @@
   "scope": "/",
   "start_url": "/",
   "icons": [
-    { "src": "/icons/ChatGPT Image Jul 13, 2025, 11_04_30 PM-192.png", "type": "image/png", "sizes": "192x192" },
-    { "src": "/icons/ChatGPT Image Jul 13, 2025, 11_04_30 PM-256.png", "type": "image/png", "sizes": "256x256" },
-    { "src": "/icons/ChatGPT Image Jul 13, 2025, 11_04_30 PM-512.png", "type": "image/png", "sizes": "512x512" }
+    { "src": "/icons/icon.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icons/icon.png", "type": "image/png", "sizes": "256x256" },
+    { "src": "/icons/icon.png", "type": "image/png", "sizes": "512x512" }
   ]
 }
