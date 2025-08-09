@@ -1,12 +1,15 @@
 import type { NextConfig } from "next";
 import withPWA from 'next-pwa'
+const path = require('path')
 
-const nextConfig: any = {
+const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
-  swcMinify: true,
   compiler: {
     removeConsole: process.env.NODE_ENV !== 'development'
+  },
+  turbopack: {
+    root: path.join(__dirname, '..'),
   }
 };
 
