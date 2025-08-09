@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 import withPWA from 'next-pwa'
 const path = require('path')
 
-const nextConfig: NextConfig = {
+const nextConfig: any = {
   /* config options here */
   reactStrictMode: true,
   compiler: {
