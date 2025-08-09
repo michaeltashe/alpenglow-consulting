@@ -3,6 +3,7 @@
 import {
   Box,
   Button,
+  Callout,
   Card,
   Em,
   Flex,
@@ -26,6 +27,8 @@ export default function Home() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   const resetFields = () => {
     setName("");
@@ -34,10 +37,19 @@ export default function Home() {
   };
 
   const handleSubmit = async () => {
+    setSuccess(false);
+    setError(false);
+
     await axios
       .post("/api/requestServices", { name, email, message })
-      .then((res) => console.log(res))
-      .catch((err) => console.error(err));
+      .then((res) => {
+        setSuccess(true);
+        setError(false);
+      })
+      .catch((err) => {
+        setSuccess(false);
+        setError(true);
+      });
     resetFields();
   };
 
@@ -73,6 +85,24 @@ export default function Home() {
                   Request for Services
                 </Heading>
               </Box>
+              {success && (
+                <Box mb="2">
+                  <Callout.Root color="grass">
+                    <Callout.Text>
+                      We have received your request and will reach out shortly!
+                    </Callout.Text>
+                  </Callout.Root>
+                </Box>
+              )}
+              {error && (
+                <Box mb="2">
+                  <Callout.Root color="ruby">
+                    <Callout.Text>
+                      Failed to send request, please try again
+                    </Callout.Text>
+                  </Callout.Root>
+                </Box>
+              )}
               <Text size="1" color="gray" mt="2">
                 <Em>Name</Em>
               </Text>
