@@ -35,7 +35,7 @@ export default function Home() {
             <Flex className="w-auto" direction="column" gap="2" align="start">
               <Heading size="8">Alpenglow</Heading>
               <Heading size="6" color="plum">
-                Consulting Services
+                Software Solutions
               </Heading>
               <Text color="gray">The best thing since sliced bread.</Text>
               <Link href="/services">

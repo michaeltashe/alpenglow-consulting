@@ -36,11 +36,16 @@ export default function Home() {
               <Text color="gray">We'll design your architecture.</Text>
               <Heading size="6" color="plum">End-to-End Development</Heading>
               <Text color="gray">An entire application, start to finish.</Text>
+              <Link href="/contact">
+                <Button style={{ cursor: "pointer" }} mt="4">
+                  Reach out now
+                </Button>
+              </Link>
             </Flex>
           </Flex>
         </Grid>
-
       </motion.main>
+      
     </div>
   );
 }
