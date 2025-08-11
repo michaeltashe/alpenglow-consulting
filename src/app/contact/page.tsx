@@ -22,13 +22,15 @@ import { useEffect, useState } from "react";
 import Navbar from "../navbar";
 import { motion } from "framer-motion";
 import axios from "axios";
+import { EmailTemplate } from "../emailTemplate";
 
 export default function Home() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const resetFields = () => {
     setName("");
@@ -37,20 +39,38 @@ export default function Home() {
   };
 
   const handleSubmit = async () => {
-    setSuccess(false);
-    setError(false);
+
+    setLoading(true);
+
+    setSuccess("");
+    setError("");
 
     await axios
       .post("/api/requestServices", { name, email, message })
       .then((res) => {
-        setSuccess(true);
-        setError(false);
+        sendEmail();
       })
       .catch((err) => {
-        setSuccess(false);
-        setError(true);
+        setSuccess("");
+        setError("Failed to send request for services");
+        setLoading(false);
       });
+
     resetFields();
+  };
+
+  const sendEmail = async () => {
+    await axios
+      .post("/api/sendEmail", { name, email, message })
+      .then(async (res) => {
+        setSuccess("Successfully sent request for services.");
+        setError("");
+      })
+      .catch((err) => {
+        setSuccess("");
+        setError("Failed to send email for services");
+      })
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -88,18 +108,14 @@ export default function Home() {
               {success && (
                 <Box mb="2">
                   <Callout.Root color="grass">
-                    <Callout.Text>
-                      We have received your request and will reach out shortly!
-                    </Callout.Text>
+                    <Callout.Text>{success}</Callout.Text>
                   </Callout.Root>
                 </Box>
               )}
               {error && (
                 <Box mb="2">
                   <Callout.Root color="ruby">
-                    <Callout.Text>
-                      Failed to send request, please try again
-                    </Callout.Text>
+                    <Callout.Text>{error}</Callout.Text>
                   </Callout.Root>
                 </Box>
               )}
@@ -133,7 +149,8 @@ export default function Home() {
               ></TextArea>
               <Flex justify="end" gap="2" mt="2">
                 <Button
-                  disabled={!name || !email || !message}
+                  loading={loading}
+                  disabled={loading || !name || !email || !message}
                   onClick={handleSubmit}
                   style={{ cursor: "pointer" }}
                   variant="soft"

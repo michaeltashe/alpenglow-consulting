@@ -2,6 +2,7 @@ import dbConnect from "@/src/lib/mongodb";
 import ServiceRequest from "@/src/lib/serviceRequest";
 import { NextApiRequest, NextApiResponse } from "next";
 import nextPWA from "next-pwa";
+import sendEmail from "./sendEmail";
 
 export default async function handler(
     req: NextApiRequest,
@@ -19,7 +20,6 @@ export default async function handler(
         })
 
         await test.save();
-
 
         res.status(200).json({message: 'POST received', data })
     } else {
