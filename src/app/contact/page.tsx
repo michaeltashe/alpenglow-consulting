@@ -39,7 +39,6 @@ export default function Home() {
   };
 
   const handleSubmit = async () => {
-
     setLoading(true);
 
     setSuccess("");
@@ -55,8 +54,6 @@ export default function Home() {
         setError("Failed to send request for services");
         setLoading(false);
       });
-
-    resetFields();
   };
 
   const sendEmail = async () => {
@@ -65,12 +62,15 @@ export default function Home() {
       .then(async (res) => {
         setSuccess("Successfully sent request for services.");
         setError("");
+        resetFields();
       })
       .catch((err) => {
         setSuccess("");
         setError("Failed to send email for services");
       })
-      .finally(() => setLoading(false));
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
